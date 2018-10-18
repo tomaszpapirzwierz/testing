@@ -1,0 +1,40 @@
+Local repository:
+
+working directory ----- stage area ----- .git folder
+
+git add. -------------> git commit ---->
+  <------------------------------------- git checkout
+
+file: modified -------> file: staged---> file: committed
+
+git clean <file> - remove changes in the working directory (-n is a dry run, -d to include directories, -i for interactive mode, -f to force)
+git reset <file> - remove a file from stage back to the working directory
+git checkout <file> - revert a change to an indexed file; git restores the file to a working dir from the local repository (last
+commited version); the file must exist in the git repository
+git rm <file> - delete a file from the local repository
+
+moving to previous version (moving the HEAD pointer):
+
+1. git log --oneline
+2. copy the hash of the commit
+3. git checkout <commit_hash>
+4. return to master: git checkout master
+
+git revert - reverting the given commit as a new commit, does not change history as it is yet another commit
+
+git reset --mixed/soft/hard - going back in time, modifies the history
+
+tomasz@HP-250 ~/git/nowy $ git log --oneline
+6ff4144 Revert "ggggg"
+b324150 ggggg
+80f4956 adding new index.html
+b78d89c adding gitignore file
+tomasz@HP-250 ~/git/nowy $ git reset --hard b324150
+HEAD is now at b324150 ggggg
+tomasz@HP-250 ~/git/nowy $ git log --oneline
+b324150 ggggg
+80f4956 adding new index.html
+b78d89c adding gitignore file
+
+
+git reset HEAD~

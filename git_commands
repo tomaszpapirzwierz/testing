@@ -36,5 +36,20 @@ b324150 ggggg
 80f4956 adding new index.html
 b78d89c adding gitignore file
 
+Browsing history
 
-git reset HEAD~
+
+git log --oneline - compacted version of log, one commit per line
+git log --onelien -n (last n commits)
+git log --author="<user>"
+git log -- /path/to/resource - hisotry of a given file/directory
+git log --grep="phrase"
+git log --patch -- path/to/resource - see what has actually been changed
+other flags:
+--summary
+--stat
+--format="placeholder" --> https://git-scm.com/docs/pretty-formats
+
+git shortlog - shows commits by user
+
+

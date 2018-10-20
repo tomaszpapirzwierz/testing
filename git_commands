@@ -1,4 +1,5 @@
 Local repository:
+-----------------
 
 working directory ----- stage area ----- .git folder
 
@@ -21,7 +22,6 @@ moving to previous version (moving the HEAD pointer):
 4. return to master: git checkout master
 
 git revert - reverting the given commit as a new commit, does not change history as it is yet another commit
-
 git reset --mixed/soft/hard - going back in time, modifies the history
 
 tomasz@HP-250 ~/git/nowy $ git log --oneline
@@ -36,8 +36,8 @@ b324150 ggggg
 80f4956 adding new index.html
 b78d89c adding gitignore file
 
-Browsing history
-
+Browsing history:
+-----------------
 
 git log --oneline - compacted version of log, one commit per line
 git log --onelien -n (last n commits)
@@ -50,6 +50,30 @@ other flags:
 --stat
 --format="placeholder" --> https://git-scm.com/docs/pretty-formats
 
+git log --graph --decorate --all --oneline
+
 git shortlog - shows commits by user
+
+Stashing files:
+--------------
+
+git stash - changes in the working directory are stashed aside and the working direcotry is clear again (useful when accidentaly changes are made in the master branch)
+git checkout <branch>
+git stash pop - resotre the stashed changes
+git stash clear - clears the whole stash
+git stash brach <branch> - create a new branch with the changes currently in stash
+
+Remote repository:
+------------------
+
+origin - alias of the main remote repo
+connect the local repo to a remote repo:
+
+git remote add origin https://github.com/tomaszpapirzwierz/testing.git
+
+git fetch - grab the list of commits fro mthe remote repo
+git merge origin/master - merge local master with the origin/master
+
+SEems like the above two are equilent of simply doing git pull
 
 

@@ -1,6 +1,0 @@
-testing
-<<<<<<< HEAD
-ggggg
-=======
-tessssss
->>>>>>> zmiany2
